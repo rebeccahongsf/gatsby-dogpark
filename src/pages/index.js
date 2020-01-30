@@ -7,7 +7,7 @@ import Search from '../components/searchbar';
 
 library.add(faSearchLocation);
 
-class index extends Component {
+class IndexPage extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -28,4 +28,4 @@ class index extends Component {
     }
 }
 
-export default index;
+export default IndexPage;

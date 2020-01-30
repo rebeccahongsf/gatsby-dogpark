@@ -17,7 +17,7 @@ const Form = styled.form`
     }
 `;
 
-class searchbar extends Component {  
+class SearchBar extends Component {  
     constructor() {
         super();
         this.state = {
@@ -61,4 +61,4 @@ class searchbar extends Component {
 }
 
 
-export default searchbar;
+export default SearchBar;

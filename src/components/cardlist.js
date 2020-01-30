@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class RestaurantList extends Component {
+class CardList extends Component {
 
     constructor(props) {
         super(props);
@@ -66,4 +66,4 @@ class RestaurantList extends Component {
     }
 }
 
-export default cardlist;
+export default CardList;
