@@ -17,7 +17,7 @@ const Form = styled.form`
     }
 `;
 
-class searchbar extends Component{  
+class searchbar extends Component {  
     constructor() {
         super();
         this.state = {
@@ -33,14 +33,13 @@ class searchbar extends Component{
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-    
         this.props.onFormSubmit(this.state.zipcodeQuery)
     }
 
     render(){
         return (
             <div>
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={(e) => this.handleFormSubmit(e)}>
                     <input 
                         placeholder="Enter Zip Code" 
                         type="number" 
