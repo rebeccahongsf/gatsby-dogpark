@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const Form = styled.form`
     /* Chrome, Safari, Edge, Opera */
@@ -15,44 +17,49 @@ const Form = styled.form`
     }
 `;
 
-
-class searchbar extends React.Component {
-    state = {
-        zipcode: "",
+class searchbar extends Component{  
+    constructor() {
+        super();
+        this.state = {
+            zipcodeQuery: ""
+        }
     }
 
-    handleInputChange = event => {
-        const target = event.target
-        const value = target.value
-        const name = target.name
+    handleSearchChange = (e) => {
         this.setState({
-            [name]: value,
+            zipcodeQuery: e.target.value
         })
     }
 
-    handleSubmit = event => {
-        event.preventDefault()
-        alert(`Your zipcode is ${this.state.zipcode}!`)
+    handleFormSubmit = (e) => {
+        e.preventDefault();
+    
+        this.props.onFormSubmit(this.state.zipcodeQuery)
     }
 
-    render() {    
+    render(){
         return (
             <div>
-                <Form onSubmit={this.handleSubmit}>
+                <Form onSubmit={handleSubmit}>
                     <input 
                         placeholder="Enter Zip Code" 
                         type="number" 
+                        id="zipcode"
                         name="zipcode" 
                         maxLength="5" 
-                        value={this.state.zipcode}
-                        onChange={this.handleInputChange}
+                        value = {this.state.searchLocationQuery}
+                        onChange = {this.handleSearchChange}
                         required 
                     />
-                    <button type="submit" name="submit">Search</button>
+                    <button type="submit" name="submit">
+                        Search
+                        <FontAwesomeIcon icon="search-location" />
+                    </button>
                 </Form>
             </div>
         )
-    }
+    } 
 }
+
 
 export default searchbar;
