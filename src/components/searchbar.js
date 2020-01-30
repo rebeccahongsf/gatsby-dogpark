@@ -1,4 +1,20 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
+
+const Form = styled.form`
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance:textfield;
+    }
+`;
+
 
 const searchbar = () => {
     return (
