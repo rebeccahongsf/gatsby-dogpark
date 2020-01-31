@@ -1,31 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component } from "react"
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSearchLocation } from '@fortawesome/free-solid-svg-icons';
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSearchLocation } from "@fortawesome/free-solid-svg-icons"
 
-import Search from '../components/searchbar';
+import Search from "../components/searchbar"
 
-library.add(faSearchLocation);
+library.add(faSearchLocation)
 
-class IndexPage extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        zipcodeQuery: null
-      };
+class index extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      zipcodeQuery: null,
     }
-  
-    onFormSubmit = (zipcodeQuery) => {
-      this.setState({
-        zipcodeQuery: zipcodeQuery
-      })
-    }
+  }
 
-    render() {
-        return (
-            <Search onFormSubmit = {this.onFormSubmit} />
-        );
-    }
+  onFormSubmit = zipcodeQuery => {
+    this.setState({
+      zipcodeQuery: zipcodeQuery,
+    })
+  }
+
+  render() {
+    return <Search onFormSubmit={this.onFormSubmit} />
+  }
 }
 
-export default IndexPage;
+export default index
