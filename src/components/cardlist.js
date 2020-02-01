@@ -9,7 +9,7 @@ const CardList = ({ businesses = [] }) => {
             key={business.id}
             style={{ margin: 12, padding: 24, border: "solid 1px black" }}
           >
-            <div>Business Alias: {business.alias}</div>
+            <div>Business Name: {business.name}</div>
             <div>Rating: {business.rating}</div>
           </div>
         )
