@@ -1,21 +1,25 @@
-import React, { useEffect, useState } from "react"
-import withLocation from "../components/withLocation"
-import axios from "axios"
-import CardList from "../components/cardlist"
-import { Link } from "gatsby"
+import React, { useEffect, useState } from 'react';
+import withLocation from '../components/withLocation';
+import axios from 'axios';
+import CardList from '../components/cardlist';
+import { Link } from 'gatsby';
+
+
+import { Container } from '../components/Container';
+
 
 const DogParks = props => {
-  const { location: zipcode } = props.search
-  const [dogParks, setDogParks] = useState([])
+  const { location: zipcode } = props.search;
+  const [dogParks, setDogParks] = useState([]);
 
   useEffect(() => {
-    getDogParks()
-  })
+    getDogParks();
+  });
 
   const getDogParks = () => {
     axios
       .get(
-        `${"https://cors-anywhere.herokuapp.com/"}https://api.yelp.com/v3/businesses/search?term=dog-park&location=${zipcode}`,
+        `${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?term=dog-park&location=${zipcode}`,
         {
           headers: {
             Authorization: `Bearer ${process.env.YELP_TOKEN}`,
@@ -23,17 +27,17 @@ const DogParks = props => {
         }
       )
       .then(res => {
-        setDogParks(res.data.businesses)
-      })
-  }
+        setDogParks(res.data.businesses);
+      });
+  };
 
   return (
-    <div>
+    <Container>
       <Link to="/">Back</Link>
       <h2>Dog parks near {zipcode}</h2>
       <CardList businesses={dogParks} />
-    </div>
-  )
-}
+    </Container>
+  );
+};
 
-export default withLocation(DogParks)
+export default withLocation(DogParks);
