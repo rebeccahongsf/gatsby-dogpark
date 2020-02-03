@@ -38,16 +38,25 @@ const Card = styled.div`
   height: 100%;
 `;
 
+const Thumbnail = styled.div`
+  img {
+    width: 100%;
+  }
+`
+
 const CardList = ({ businesses = [] }) => {
   return (
     <Grid>
       {businesses.map(business => {
         return (
           <Item>
+            <a href={business.url}>
             <Card key={business.id}>
-              <div>Business Name: {business.name}</div>
-              <div>Rating: {business.rating}</div>
-            </Card>
+                <Thumbnail><img alt={business.name} src={business.image_url} /></Thumbnail>
+                <div>Business Name: {business.name}</div>
+                <div>Rating: {business.rating}</div>
+              </Card>
+            </a>
           </Item>
         );
       })}
