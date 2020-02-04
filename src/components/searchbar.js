@@ -1,8 +1,8 @@
-import React, { Component } from "react"
-import { Link } from "gatsby"
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
 
-import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Form = styled.form`
   /* Chrome, Safari, Edge, Opera */
@@ -13,32 +13,32 @@ const Form = styled.form`
   }
 
   /* Firefox */
-  input[type="number"] {
+  input[type='number'] {
     -moz-appearance: textfield;
   }
-`
+`;
 
 class searchbar extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      zipcodeQuery: "",
-    }
-    this.handleFormSubmit = this.handleFormSubmit.bind(this)
-    this.handleSearchChange = this.handleSearchChange.bind(this)
+      zipcodeQuery: '',
+    };
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
   handleSearchChange = e => {
     this.setState({
       zipcodeQuery: e.target.value,
-    })
-  }
+    });
+  };
 
   handleFormSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
 
-    this.props.onFormSubmit(this.state.zipcodeQuery)
-  }
+    this.props.onFormSubmit(this.state.zipcodeQuery);
+  };
 
   render() {
     return (
@@ -58,8 +58,8 @@ class searchbar extends Component {
           <FontAwesomeIcon icon="search-location" />
         </Link>
       </>
-    )
+    );
   }
 }
 
-export default searchbar
+export default searchbar;
