@@ -30,6 +30,9 @@ const Item = styled.div`
     box-shadow: rgba(0, 0, 0, 0.09) 0px 8px 26px 0px;
     transition: all 0.3s ease 0s;
   }
+  &:focus {
+    border: 10px solid #eee;
+  }
 `;
 
 const Card = styled.div`
