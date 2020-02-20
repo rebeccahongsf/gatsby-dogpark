@@ -42,7 +42,7 @@ class searchbar extends Component {
 
   render() {
     return (
-      <>
+      <Form>
         <input
           placeholder="Enter Zip Code"
           type="number"
@@ -57,7 +57,7 @@ class searchbar extends Component {
           Search
           <FontAwesomeIcon icon="search-location" />
         </Link>
-      </>
+      </Form>
     );
   }
 }
