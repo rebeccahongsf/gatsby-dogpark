@@ -8,6 +8,11 @@ cd gatsby-dogpark
 npm install # Install node_modules dependencies
 ```
 
+Where do I look for the main files?
+```
+cd src # Or open the gatsby-dogpark directory within your favorite text editor.
+```
+
 Build Command(s)
 ```
 gatsby develop # Starts development server at http://localhost:8000/
